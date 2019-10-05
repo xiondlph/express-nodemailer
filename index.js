@@ -1,5 +1,5 @@
 /**
- * express-nodemailer-ts
+ * express-nodemailer
  * Copyright(c) 2019 Shukhrat Ismailov <shukhrat@ismax.ru>
  * MIT Licensed
  */
@@ -9,7 +9,7 @@
 const nodemailer = require('nodemailer');
 
 /**
- *
+ * Init ExpressNodemailer
  *
  * @param {Object} app the express application object
  * @param {Object} options the options param for `nodemailer.createTransport` method
@@ -17,7 +17,7 @@ const nodemailer = require('nodemailer');
  */
 module.exports = (app, options, defaults) => {
     if (app.mailer) {
-        throw new Error('Express-Nodemailer already has been Initialized');
+        throw new Error("ExpressNodemailer already has been Initialized");
     }
 
     const transporter = nodemailer.createTransport(options, defaults);
