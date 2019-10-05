@@ -1,0 +1,30 @@
+{
+  "name": "express-nodemailer-ts",
+  "version": "1.0.0",
+  "description": "Small helper for express that allows you to send email using nodemailer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiondlph/express-nodemailer-ts.git"
+  },
+  "keywords": [
+    "express",
+    "nodemailer",
+    "typescript"
+  ],
+  "author": "Shukhrat Ismailov <shukhrat@ismax.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiondlph/express-nodemailer-ts/issues"
+  },
+  "homepage": "https://github.com/xiondlph/express-nodemailer-ts#readme",
+  "dependencies": {
+    "nodemailer": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/express-serve-static-core": "^4.16.9"
+  }
+}
