@@ -3,7 +3,7 @@ import nodemailer, {SentMessageInfo} from "nodemailer";
 
 declare module "express-serve-static-core" {
     export interface Application {
-        mailer: {
+        expressNodemailer: {
             transporter: nodemailer.Transporter
         }
     }
