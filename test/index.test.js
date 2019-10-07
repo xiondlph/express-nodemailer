@@ -20,7 +20,7 @@ describe('ExpressNodemailer initialization', () => {
         expressNodemailer(app, {}, {});
 
         expect(app.use.called).to.equal(true);
-        app.should.to.have.property("mailer");
+        app.should.to.have.property("expressNodemailer");
     });
 
     it('should correctly pass parameters to nodemailer.createTransport method', () => {
@@ -53,7 +53,7 @@ describe('ExpressNodemailer initialization', () => {
 
         expect(
             () => {expressNodemailer()}
-        ).to.throw('Cannot read property \'mailer\' of undefined');
+        ).to.throw('Cannot read property \'expressNodemailer\' of undefined');
     });
 
     it('should throw error on second call', () => {
