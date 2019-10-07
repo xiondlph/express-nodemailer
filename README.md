@@ -3,7 +3,7 @@
 # express-nodemailer
 >The small helper for Express that allows you to send email using nodemailer
 
-The typescript support module for Express, that allow you to send an email using `nodemailer` in the route handler by calling a certain method from the response object.
+The typescript support module for **Express**, that allow you to send an email using **Nodemailer** in the route handler by calling a certain method from the response object.
 
 ## Install
 
@@ -22,7 +22,7 @@ yarn add express-nodemailer
 // Declare module
 import expressNodemailer from "express-nodemailer"; 
 
-// The parameters that used as `options` argument for createTransport method of nodemailer
+// The parameters that are used as `options` argument for createTransport method of Nodemailer
 const options = {
     host: 'smtp.example.com',
     port: 465,
@@ -33,20 +33,20 @@ const options = {
     }
 };
 
-// The parameters that used as `defaults` argument for createTransport method of nodemailer
+// The parameters that are used as `defaults` argument for createTransport method of Nodemailer
 const defaults = {
     from: "sender@example.com",
 };
 
 // Initialize a module to extends your Express application
-expressNodemailer(app, options, defaults); // `app` is the express Application object
+expressNodemailer(app, options, defaults); // `app` is the Express application object
 
 // Some Express source code before start server listening...
 ```
 
-Initialization of `expressNodemailer` extends your Express application by mounting a special middleware to it which implements the ability to send en email by calling the `sandMail` method from the response object.
+Initialization of `expressNodemailer` extends your **Express** application by mounting a special middleware to it which implements the ability to send en email by calling the `sandMail` method from the response object.
 
-*For direct use of the Nodemailer functionality, the `transporter` object itself, created with the given arguments, will be available in the Express application object:*
+*For direct use of the **Nodemailer** functionality, the `transporter` object itself, created with the given arguments, will be available in the **Express** application object:*
 
 `app.expressNodemailer.transporter`
 
@@ -73,7 +73,15 @@ This method has four arguments:
 
 * **to** - REQUIRED - Comma separated list or an array of recipients email addresses
 * **subject** - REQUIRED - The subject of the e-mail
-* **text** - REQUIRED - The path to template for text body of email
-* **html** - The path to template for html body of email
+* **text** - REQUIRED - The path to template file for text body of email
+* **html** - The path to template file for html body of email
 
-The last two arguments are the paths to the template files that are rendered by same render process as Express. For example, if your Express application use `jade` view engine, you should also write your email templates in `jade`.
+The last two arguments are the paths to the template files that are rendered by same render process as **Express**. For example, if your **Express** application use `jade` view engine, you should also write your email templates in `jade`.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
