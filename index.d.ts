@@ -1,4 +1,4 @@
-import {Application} from "express-serve-static-core";
+import {Application, Response} from "express-serve-static-core";
 import nodemailer, {SentMessageInfo} from "nodemailer";
 
 declare module "express-serve-static-core" {
