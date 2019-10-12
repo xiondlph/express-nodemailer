@@ -12,7 +12,7 @@ describe('ExpressNodemailer initialization', () => {
     });
 
     it('should success initialize', () => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
         const app = { // express Application object
             use: sinon.spy()
         };
@@ -25,7 +25,7 @@ describe('ExpressNodemailer initialization', () => {
 
     it('should correctly pass parameters to nodemailer.createTransport method', () => {
         const nodemailer = require('nodemailer');
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
 
         const createTransportStub = sinon.stub(nodemailer, 'createTransport');
         const options = {
@@ -49,7 +49,7 @@ describe('ExpressNodemailer initialization', () => {
     });
 
     it('should throw error on calling without arguments', () => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
 
         expect(
             () => {expressNodemailer()}
@@ -57,7 +57,7 @@ describe('ExpressNodemailer initialization', () => {
     });
 
     it('should throw error on second call', () => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
         const app = {
             use() {}
         };
@@ -88,7 +88,7 @@ describe('Sending mail through ExpressNodemailer', () => {
     });
 
     it('should success sending email by calling a sendMail method from response', (done) => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
 
         res.render.onFirstCall().yieldsRight(null, 'text result');
         res.render.onSecondCall().yieldsRight(null, 'html result');
@@ -137,7 +137,7 @@ describe('Sending mail through ExpressNodemailer', () => {
     });
 
     it('should success sending email with only text body template', (done) => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
 
         res.render.onFirstCall().yieldsRight(null, 'text result');
         res.render.onSecondCall().yieldsRight(null, 'html result');
@@ -185,7 +185,7 @@ describe('Sending mail through ExpressNodemailer', () => {
     });
 
     it('should throw error on rendering text body template', (done) => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
         const error = new Error('text template rendering error');
 
         res.render.onFirstCall().yieldsRight(error, 'text result');
@@ -212,7 +212,7 @@ describe('Sending mail through ExpressNodemailer', () => {
     });
 
     it('should throw error on rendering html body template', (done) => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
         const error = new Error('html template rendering error');
 
         res.render.onFirstCall().yieldsRight(null, 'text result');
@@ -241,7 +241,7 @@ describe('Sending mail through ExpressNodemailer', () => {
     });
 
     it('should get rejected from nodemailer sendMail method', (done) => {
-        const expressNodemailer = require('../index').default;
+        const expressNodemailer = require('../index');
         const error = new Error('error sending email');
 
         res.render.onFirstCall().yieldsRight(null, 'text result');

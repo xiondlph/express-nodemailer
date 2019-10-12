@@ -15,7 +15,7 @@ const nodemailer = require('nodemailer');
  * @param {Object} options the options param for `nodemailer.createTransport` method
  * @param {Object} defaults the defaults param for `nodemailer.createTransport` method
  */
-module.exports.default = (app, options, defaults) => {
+module.exports = (app, options, defaults) => {
     if (app.expressNodemailer) {
         throw new Error("ExpressNodemailer already has been Initialized");
     }
